@@ -27,7 +27,9 @@ a {
 }
 .thumbnail-list {
   list-style: none;
+  justify-content: space-between; /* Lets container draws how flex items are drawn, space between makes sure there is an even space */
   order: 2; /* order:# - controls the order of the element in the flex col/row */
+  display: flex;
   padding: 0;
   white-space: nowrap; /* white-space:nowrap - prevents elements from wrapping */
   overflow-x: auto;  /* adds scrollbar in horizontal bar */
@@ -36,15 +38,13 @@ a {
   display: block;
   width: 100%;
 }
-.thumbnail-item + .thumbnail-item {
-  margin-top: 10px;
-}
 
 .thumbnail-item {
   background: blue;
   /*display:block - remove white space with a line-break */
   display: inline-block;   /* display block without the line brakes */
-  width: 120px;
+  min-width: 120px;
+  max-width: 120px;
   border: 1px solid rgb(100%,100%,100%);   /* For browsers that do not support rgba */
   border: 1px solid rgba(100%,100%,100%,0.8);
 }
@@ -64,7 +64,22 @@ li {
 }
 .detail-image-container {
   flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.detail-iamge {
+.detail-image-frame {
+  text-align: center;
+  position: relative;
+}
+.detail-image {
   width: 90%;
+}
+.detail-image-title {
+  font-size: 40px;
+  color: white;
+  text-shadow: rgba(0,0,0,0.9) 1px 2px 9px;
+  position: absolute;
+  bottom: -16px;
+  left: 4px;
 }
