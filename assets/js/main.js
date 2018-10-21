@@ -13,3 +13,19 @@ function setDetails(imageUrl, titleText) {
   // changes the title
   detailTitle.textContent = titleText;
 }
+// Returns image url
+function imageFromThumb(thumbnail){
+  'use strict';
+  // this getsAttribute of data-image-url value
+  return thumbnail.getAttribute('data-image-url');
+}
+// Returns title value
+function titleFromThumb(thumbnail){
+  'use strict';
+  // this getsAttribute of data-image-url value
+  return thumbnail.getAttribute('data-image-title');
+}
+function setDetailsFromThumb(thumbnail){
+  'use strict';
+  setDetails(titleFromThumb(), imageFromThumb());
+}
