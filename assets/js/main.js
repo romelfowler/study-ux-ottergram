@@ -1,6 +1,7 @@
 var DETAIL_IMAGE_SELECTOR = '[data-image-role="target"]';
-var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
 var DETAIL_TITLE_SELECTOR = '[data-image-role="title"]';
+var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
+
 function setDetails(imageUrl, titleText) {
   'use strict';
   var detailImage = document.querySelector(DETAIL_IMAGE_SELECTOR); // Grabs image
@@ -27,7 +28,7 @@ function titleFromThumb(thumbnail){
 function setDetailsFromThumb(thumbnail){
   'use strict';
   // puts image url and image title and setDetails
-  setDetails(titleFromThumb(), imageFromThumb());
+  setDetails(imageFromThumb(thumbnail), titleFromThumb(thumbnail) );
 }
 // Add Event Listener to click thumbnail and replace the window
 function addThumbClickHandler(thumb){
@@ -38,17 +39,17 @@ function addThumbClickHandler(thumb){
   });
 }
 // retrieve all matching elements for THUMBNAIL_LINK_SELECTOR
-// function getThumbnailsArray(){
-//   'use strict';
-//   var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
-//   var thumbnailArray = [].slice.call(thumbnails);
-//   return thumbnailArray;
-// }
-// function initializeEvents(){
-//   'use strict';
-//   // 1. This will get an array of thumbnails.
-//   // 2. It will iterate over the array, adding clickHandler
-//   var thumbnails = getThumbnailsArray();
-//   thumbnails.forEach(addThumbClickHandler);
-// }
-// initializeEvents();
+function getThumbnailsArray(){
+  'use strict';
+  var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
+  var thumbnailArray = [].slice.call(thumbnails);
+  return thumbnailArray;
+}
+function initializeEvents(){
+  'use strict';
+  // 1. This will get an array of thumbnails.
+  // 2. It will iterate over the array, adding clickHandler
+  var thumbnails = getThumbnailsArray();
+  thumbnails.forEach(addThumbClickHandler);
+}
+initializeEvents();
