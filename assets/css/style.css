@@ -1,102 +1,126 @@
-html, body {
-  height: 100%;
-}
+html,
 body {
-  display: flex; /* this lays all children items in a row */
-  flex-direction: column; /* controls the direction: rows or columns */
-  font-size: 10px;
-  background: rgb(149,194,214);
+    height: 100%;
 }
+
+body {
+    display: flex;
+    /* this lays all children items in a row */
+    flex-direction: column;
+    /* controls the direction: rows or columns */
+    font-size: 10px;
+    background: rgb(149, 194, 214);
+}
+
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .main-header {
-  flex: 0 1 auto;
+    flex: 0 1 auto;
 }
+
 .logo-text {
-  font-family: "ubuntu", sans-serif;
-  background: white;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 37px;
+    font-family: "ubuntu", sans-serif;
+    background: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 37px;
 }
+
 .main-content {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
 }
+
 .thumbnail-list {
-  list-style: none;
-  justify-content: space-between; /* Lets container draws how flex items are drawn, space between makes sure there is an even space */
-  order: 2; /* order:# - controls the order of the element in the flex col/row */
-  display: flex;
-  padding: 0;
-  white-space: nowrap; /* white-space:nowrap - prevents elements from wrapping */
-  overflow-x: auto;  /* adds scrollbar in horizontal bar */
+    list-style: none;
+    justify-content: space-between;
+    /* Lets container draws how flex items are drawn, space between makes sure there is an even space */
+    order: 2;
+    /* order:# - controls the order of the element in the flex col/row */
+    display: flex;
+    padding: 0;
+    white-space: nowrap;
+    /* white-space:nowrap - prevents elements from wrapping */
+    overflow-x: auto;
+    /* adds scrollbar in horizontal bar */
 }
+
 .thumbnail-image {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
 .thumbnail-item {
-  background: blue;
-  /*display:block - remove white space with a line-break */
-  display: inline-block;   /* display block without the line brakes */
-  min-width: 120px;
-  max-width: 120px;
-  border: 1px solid rgb(100%,100%,100%);   /* For browsers that do not support rgba */
-  border: 1px solid rgba(100%,100%,100%,0.8);
+    background: blue;
+    /*display:block - remove white space with a line-break */
+    display: inline-block;
+    /* display block without the line brakes */
+    min-width: 120px;
+    max-width: 120px;
+    border: 1px solid rgb(100%, 100%, 100%);
+    /* For browsers that do not support rgba */
+    border: 1px solid rgba(100%, 100%, 100%, 0.8);
 }
+
 #barry {
-  background: green;
+    background: green;
 }
+
 li {
-  background: red;
+    background: red;
 }
+
 .thumbnail-title {
-  display: block;
-  margin: 0;
-  padding: 4px 10px;
-  background: rgb(96,125,139);
-  color: rgb(202,238,255);
-  font-size: 18px;
+    display: block;
+    margin: 0;
+    padding: 4px 10px;
+    background: rgb(96, 125, 139);
+    color: rgb(202, 238, 255);
+    font-size: 18px;
 }
+
 .detail-image-container {
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .detail-image-frame {
-  text-align: center;
-  position: relative;
+    text-align: center;
+    position: relative;
 }
+
 .detail-image {
-  width: 90%;
+    width: 90%;
 }
+
 .detail-image-title {
-  font-size: 40px;
-  color: white;
-  text-shadow: rgba(0,0,0,0.9) 1px 2px 9px;
-  position: absolute; 
-  bottom: -16px;
-  left: 4px;
+    font-size: 40px;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.9) 1px 2px 9px;
+    position: absolute;
+    bottom: -16px;
+    left: 4px;
 }
+
 @media all and (min-width: 768px) {
-  .main-content {
-    flex-direction: row;
-    overflow: hidden;
-  }
-  .thumbnail-list {
-    flex-direction: column;
-    order: 0;
-    margin-left: 20px;
-  }
-  .thumbnail-item {
-    max-width: 260px;
-  }
-  .thumbnail-item + .thumbnail-item {
-    margin-top: 20px
-  }
+    .main-content {
+        flex-direction: row;
+        overflow: hidden;
+    }
+    .thumbnail-list {
+        flex-direction: column;
+        order: 0;
+        margin-left: 20px;
+    }
+    .thumbnail-item {
+        max-width: 260px;
+    }
+    .thumbnail-item+.thumbnail-item {
+        margin-top: 20px
+    }
 }
